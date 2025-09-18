@@ -23,7 +23,6 @@ int calculate_moves(int n) {
   }
   return moves - 1;
 }
-
 void print_initial_state(int n) {
   printf("\nInitial state:\n");
   printf("Rod A: ");
@@ -37,7 +36,6 @@ void print_initial_state(int n) {
   printf("       2) Only the top disk can be moved\n");
   printf("       3) A larger disk cannot be placed on a smaller disk\n\n");
 }
-
 int main() {
   int n;
     
@@ -48,24 +46,14 @@ int main() {
   if (n <= 0) {
     printf("Please enter a positive number of disks.\n");
     return 1;
-  }
-    
-  if (n > 10) {
-    printf("Warning: %d disks will require %d moves. This might take a while!\n", n, calculate_moves(n));
-    printf("Press Enter to continue...");
-    while (getchar() != '\n');  // Wait until Enter is pressed
-    //
-  }
-    
+  } 
   print_initial_state(n);
-    
   printf("Solution (minimum %d moves):\n", calculate_moves(n));
   printf("================================\n");
-    
   hanoi(n, 'A', 'C', 'B');
-    
   printf("================================\n");
   printf("All disks successfully moved to Rod C in %d moves!\n", move);
     
   return 0;
 }
+
